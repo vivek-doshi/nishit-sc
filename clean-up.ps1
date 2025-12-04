@@ -166,47 +166,29 @@ foreach ($Folder in $Folders) {
 ###################################################################################################################################################################
 ###################################################################/WEB/ATTACHMENTS/* PURGE###################################
     # --- Web\Attachments section ---
-    $AttachmentsPath = Join-Path $Folder.FullName "Web\Attachments"
-    if (-not (Test-Path $AttachmentsPath)) {
-        "Skipped: $AttachmentsPath (path not found)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-    } else {
-        $AttachmentFiles = Get-ChildItem -Path $AttachmentsPath -File -ErrorAction SilentlyContinue
-        $AttachmentDeletedCount = 0
-        foreach ($File in $AttachmentFiles) {
-            try {
-                Remove-Item $File.FullName -Force
-                "Deleted: $($File.FullName)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-                $AttachmentDeletedCount++
-            }
-            catch {
-                "Failed to delete: $($File.FullName) - $($_.Exception.Message)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-            }
-        }
-        "Folder: $($Folder.Name) - Web\\attachments Deleted $AttachmentDeletedCount files" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-    }
+    #$AttachmentsPath = Join-Path $Folder.FullName "Web\Attachments"
+    #if (-not (Test-Path $AttachmentsPath)) {
+    #    "Skipped: $AttachmentsPath (path not found)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
+    #} else {
+    #    $AttachmentFiles = Get-ChildItem -Path $AttachmentsPath -File -ErrorAction SilentlyContinue
+    #    $AttachmentDeletedCount = 0
+    #    foreach ($File in $AttachmentFiles) {
+     #       try {
+      #          Remove-Item $File.FullName -Force
+       #         "Deleted: $($File.FullName)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
+        #        $AttachmentDeletedCount++
+         #   }
+          #  catch {
+           #     "Failed to delete: $($File.FullName) - $($_.Exception.Message)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
+            #}
+        #}
+        #"Folder: $($Folder.Name) - Web\\attachments Deleted $AttachmentDeletedCount files" | Out-File -FilePath $LogFile -Append -Encoding UTF8
+    #}
 ###################################################################/WEB/ATTACHMENTS/* PURGE###################################
 ###################################################################################################################################################################
 
 ###################################################################/WEB/ATTACHMENTS/POLICEREPORT/* PURGE###################################
     # --- Web\Attachments\PoliceReport section ---
-    $PoliceReportPath = Join-Path $Folder.FullName "Web\Attachments\PoliceReport"
-    if (-not (Test-Path $PoliceReportPath)) {
-        "Skipped: $PoliceReportPath (path not found)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-    } else {
-        $PoliceFiles = Get-ChildItem -Path $PoliceReportPath -File -ErrorAction SilentlyContinue
-        $PoliceDeletedCount = 0
-        foreach ($File in $PoliceFiles) {
-            try {
-                Remove-Item $File.FullName -Force
-                "Deleted: $($File.FullName)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-                $PoliceDeletedCount++
-            }
-            catch {
-                "Failed to delete: $($File.FullName) - $($_.Exception.Message)" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-            }
-        }
-        "Folder: $($Folder.Name) - Web\\Attachments\\PoliceReport Deleted $PoliceDeletedCount files" | Out-File -FilePath $LogFile -Append -Encoding UTF8
-    }
 ###################################################################/WEB/ATTACHMENTS/POLICEREPORT/* PURGE###################################
 
 ###################################################################/WEB/TEMP/* PURGE###################################
@@ -265,7 +247,7 @@ foreach ($Folder in $Folders) {
 
 ####### files are getting deleted from these locations:
 #F:\{Site}\Web\Logs (deletes error_*.log files older than 7 days)
-#F:\{Site}\Web\Attachments (purges all files, no retention)
+#F:\{Site}\Web\Attachments (purges all files, no retention) -> don't have this include. 
 #F:\{Site}\Web\PoliceReport  (purges all files, no retention)
 #F:\{Site}\Web\CRReports\logs (deletes error_*.log files older than 7 days)
 #F:\{Site}\DeviceHubLogs (deletes DeviceHubLogs_*.txt files older than 7 days)
