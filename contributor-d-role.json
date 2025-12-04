@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "apiVersion": "2022-04-01",
+      "name": "[guid(subscription().id, 'ContributorWithoutDelete')]",
+      "properties": {
+        "roleName": "Contributor Without Delete",
+        "description": "Can view and modify resources but cannot delete them.",
+        "type": "CustomRole",
+        "permissions": [
+          {
+            "actions": [
+              "*"
+            ],
+            "notActions": [
+              "*/delete",
+              "Microsoft.Authorization/*/Delete",
+              "Microsoft.Resources/subscriptions/resourceGroups/delete"
+            ]
+          }
+        ],
+        "assignableScopes": [
+          "[subscription().id]"
+        ]
+      }
+    }
+  ]
+}

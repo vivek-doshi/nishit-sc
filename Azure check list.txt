@@ -1,0 +1,16 @@
+Metric Blade - Quick Visual Check on the all the VMs (IIS + SQL)  - 1.5
+Quick scans on Backups for all VMs and Data integrity checks on the latest backup 1.5
+
+
+
+Azure monthly report (Include any major outage, CPU, RAM Usage and burst, )1.5
+
+
+
+
+Boot Diagnostics review - check on boot failure, kernel panics, blue screens for VMs (IIS + SQL) -1.5
+Quickly test connectivity between VMs, subnets, or to internet endpoints 1 
+Manual disks checks and clean up on all VMs (IIS + SQL) - Clean up memory dumps, updates files windows cache - 1.5
+Disk Performance + Health - Checking Disk latency, Disk queue depth for (P10 SSDs) - 1.5
+Run Performance Diagnostics - check scan on Network Bottle neck, memory pressure or latencies (IIS + SQL) - 1.5
+Quick scans on Backups for all VMs and Data integrity checks on the latest backup 1.5

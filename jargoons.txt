@@ -1,0 +1,32 @@
+Hub-and-Spoke topology - Network single point of failure 
+
+Private Endpoints
+
+Auto-Heal Rules
+
+VNet Integration
+
+Terraform 
+
+
+bitbucket Runner 
+
+
+orchestration
+
+
+YAML -> Runner -> deployment 
+
+Auto-provisioned
+
+workloads
+
+Vendor-neutral builds
+
+Blue/Green cluster segmentation
+
+Rolling deployment topology
+
+Build artifact versioning discipline
+
+Pipeline orchestration layer
